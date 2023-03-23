@@ -9,7 +9,7 @@ Nimiq 2.0 has four types of accounts:
 - Vesting contract
 - Staking contract
 
-Users can operate with their accounts and interact with the blockchain through [transactions](Transactions%20568748968c594de8843512486055027c.md). Each account has a unique address. They are stored in the state tree of the blockchain.
+Users can operate with their accounts and interact with the blockchain through [TODO transactions](https://nimiq.com). Each account has a unique address. They are stored in the state tree of the blockchain.
 
 ### **Basic account**
 
@@ -69,4 +69,4 @@ Note that unlocking the funds is a predefined action, and it happens at every â€
 
 The staking contract is a Nimiq 2.0 type of contract that allows nodes to be validators and stakers, thus being a part of the consensus. Any node with a wallet and stake in Nimiq's blockchain can propose to be a validator or a staker.
 
-For a detailed explanation about the staking contract, follow this [link](Staking%20Contract%208f2c294b41704fa19a4350e73dc0f9e2.md) to read on validators, stakers, and their interactions with the staking contract.
+For a detailed explanation about the staking contract, follow this [link](staking-contract.md) to read on validators, stakers, and their interactions with the staking contract.

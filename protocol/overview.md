@@ -6,15 +6,15 @@ Nimiq 2.0 is a proof-of-stake blockchain that, instead of miners mining blocks, 
 
 ### Validators
 
-Any node in Nimiq’s network can propose to be a validator by staking its coins as a deposit. The higher the stake a node has, the higher the chances of getting selected to produce blocks and be a part of the validator list. They get selected according to the [validator selection](Slots%2073881ed12bb340cb93e8ed82950dde11.md) rules. We have 512 validators per batch ready to produce blocks.
+Any node in Nimiq’s network can propose to be a validator by staking its coins as a deposit. The higher the stake a node has, the higher the chances of getting selected to produce blocks and be a part of the validator list. They get selected according to the [validator selection](slots.md) rules. We have 512 validators per batch ready to produce blocks.
 
-### [Block format](Block%20format%203d371494396243b890826a370124b613.md)
+### [TODO Block format](https://nimiq.com)
 
-Our blockchain is composed of micro and macro blocks. Micro blocks are produced by validators and contain transactions, and macro blocks are proposed by validators and mark the end of a batch or epoch. Also, each micro block is produced by a validator, and macro blocks are proposed by a validator through the [Tendermint](Tendermint%20protocol%2022c7bfb4c7924ae78f57e1db9039c95c.md) protocol, and these latter blocks offer finality.
+Our blockchain is composed of micro and macro blocks. Micro blocks are produced by validators and contain transactions, and macro blocks are proposed by validators and mark the end of a batch or epoch. Also, each micro block is produced by a validator, and macro blocks are proposed by a validator through the [TODO Tendermint](https://nimiq.com) protocol, and these latter blocks offer finality.
 
 There are two types of macro blocks: checkpoint and election. The validator list remains the same in a checkpoint macro block, and no election of validators occurs. In an election macro block, a new validator list is elected to produce the blocks of the next epoch. Ultimately, a batch is the time between two checkpoint macro blocks, and an epoch is the interval between two election macro blocks.
 
-### [Behavior modes](Optimistic%20and%20pessimistic%20mode%20574a3bea3e8a453cb6c4645171e155b6.md)
+### [TODO Behavior modes](https://nimiq.com)
 
 As Albatross assumes the presence of malicious validators, we consider two modes of behavior: optimistic mode and pessimistic mode.
 
@@ -32,7 +32,7 @@ Misbehaving validators get punished and get added to the punishment sets. In the
 - Once a rational validator adds a skip block in place of a micro block, the blockchain can resume its behavior.
 - Forks are reverted once a rational validator submits a fork proof.
 
-### [Punishments](Punishments%20db3044882bd24830897b60a0a99bfab0.md)
+### [Punishments](punishments.md)
 
 Since our protocol assumes misbehaving validators, we structured measures to punish malicious acts:
 

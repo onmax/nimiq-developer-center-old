@@ -8,7 +8,7 @@ The staking contract is a special contract that deals with functions regarding v
 
 A validator's responsibility is to produce, propose and sign blocks, thus validating blocks and participating in the consensus. A node must have a wallet in Nimiq's blockchain to propose to be a validator. Having a wallet allows the node to deposit its coins to its validator's address.
 
-By validating blocks, validators get rewarded for their work. The [rewards](Rewards%2091c0b210835740ed8d7f2b6a1fb60eb0/Rewards%20(previous%20version)%20d6343158ef7445f8905dcc33e9f04672.md) are distributed to the validator. Our blockchain requires a 10 000 NIM deposit. This minimum deposit prevents the validator from getting offline, delaying the block production, or acting maliciously. Furthermore, validator accounts are heavy on data, so the minimum deposit prevents someone from creating a validator account with 10 NIM and forgetting about it.
+By validating blocks, validators get rewarded for their work. The [rewards](rewards.md) are distributed to the validator. Our blockchain requires a 10 000 NIM deposit. This minimum deposit prevents the validator from getting offline, delaying the block production, or acting maliciously. Furthermore, validator accounts are heavy on data, so the minimum deposit prevents someone from creating a validator account with 10 NIM and forgetting about it.
 
 ### Staker
 
@@ -20,7 +20,7 @@ If a node doesn't have the resources, knowledge, or availability to be a validat
 - The **validator**'**s object** is where is stored each validator's address, their balance, their keys, and the number of stakers they validate for.
 - The **staker object** contains the address, the balance, and the address of the validator to which the staker delegates its coins.
 
-![trie staking contract.drawio.png](Staking%20Contract%208f2c294b41704fa19a4350e73dc0f9e2/trie_staking_contract.drawio.png)
+![trie staking contract.drawio.png](/public/protocol/trie_staking_contract.png)
 
 This is an illustration to navigate through the staking contract. For instance, to reach for a specific validator address, the path would be:
 
@@ -33,16 +33,16 @@ This is an illustration to navigate through the staking contract. For instance, 
 ### Staking contract object
 
 - Balance: The total amount of coins staked in the staking contract. This amount includes both validators and stakers deposits.
-- Active validators list: A list of all the validators eligible to receive validator and validator [slots](Slots%2073881ed12bb340cb93e8ed82950dde11.md). It also includes their corresponding balance.
+- Active validators list: A list of all the validators eligible to receive validator and validator [slots](slots.md). It also includes their corresponding balance.
 - Parked set: The list of validators parked in the current epoch. A parked validator gets inactivated at the end of the epoch unless it sends an unparking transaction.
 - Current lost reward: The list of validator slots that lost rewards in the current batch, meaning that they won't receive the rewards of the current batch when distributed at the end of the next batch.
 - Previous lost reward: The list of validator slots that lost rewards in the previous batch, meaning that they won't receive the rewards at the end of the current batch.
 - Current disabled slots: The list of the validator slots that are ineligible to produce micro blocks in the current batch.
 - Previous disabled slot: The list of the validator slots that were ineligible to produce micro blocks in the previous batch.
 
-The staking contract gathers both current and previous lost rewards and disabled slots to keep track of the validators that get their rewards slashed. As explained in the [punishments](Punishments%20db3044882bd24830897b60a0a99bfab0.md) document, validators are immediately added to the punishment sets once they misbehave. It is essential to monitor when they are added and removed since the punishment sets dictate the rewards distribution.
+The staking contract gathers both current and previous lost rewards and disabled slots to keep track of the validators that get their rewards slashed. As explained in the [punishments](punishments.md) document, validators are immediately added to the punishment sets once they misbehave. It is essential to monitor when they are added and removed since the punishment sets dictate the rewards distribution.
 
-Since the rewards of a batch are distributed at the end of the next batch and [fork proofs](Fork%20proofs%2033a1b9a0485a448b8bacdf6e11e13e6b/Fork%20proofs%20(previous%20version)%20f843201234a34c2c834fa46e5460f79d.md) can be submitted until the end of the batch after the fork occurred, the staking contract needed to keep track of which validators are punished and in which batch. The punishment sets also monitor which validators are eligible to produce blocks.
+Since the rewards of a batch are distributed at the end of the next batch and [fork proofs](fork-proofs.md) can be submitted until the end of the batch after the fork occurred, the staking contract needed to keep track of which validators are punished and in which batch. The punishment sets also monitor which validators are eligible to produce blocks.
 
 ### Validators
 
@@ -90,7 +90,7 @@ The validator’s signing key is used for the following transactions:
 - Reactivate
 - Unpark
 
-![validator txs.drawio.png](Staking%20Contract%208f2c294b41704fa19a4350e73dc0f9e2/validator_txs.drawio.png)
+![validator txs.drawio.png](/public/protocol/validator_txs.png)
 
 ### Staker's transactions:
 

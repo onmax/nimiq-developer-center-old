@@ -8,7 +8,7 @@ A skip block is a micro block with some differences: it doesn't hold transaction
 
 As for the justification, it attests that *x* validator slots received and signed the skip block, and resuming the block production is unanimous among validators. The remainder data fields are similar to a micro block. The following images illustrate their differences:
 
-![micro and skip.drawio.png](Skip%20blocks%20188ce1d7d58347e2bb3e3a927965b532/micro_and_skip.drawio.png)
+![micro and skip.png](/public/protocol/micro_and_skip.png)
 
 Mind these differentiating aspects:
 
@@ -25,9 +25,9 @@ The chain selection is not affected by skip blocks, unlike forks. Since skip blo
 
 Skip blocks can be added at any point in a batch and can also be added multiple times during a batch, as shown in the following illustrative figure:
 
-![skip block beginning.drawio.png](Skip%20blocks%20188ce1d7d58347e2bb3e3a927965b532/skip_block_beginning.drawio.png)
+![skip block beginning.drawio.png](/public/protocol/skip_block_beginning.png)
 
-![skip block end.drawio.png](Skip%20blocks%20188ce1d7d58347e2bb3e3a927965b532/skip_block_end.drawio.png)
+![skip block end.drawio.png](/public/protocol/skip_block_end.png)
 
 Note that when a validator doesn’t produce the micro block in the expected time, he will be added to the punishment set for attempting to delay the block production. Plus, the skip blocks get a slash inherent that confirms that the delayed validators didn't produce the micro block in the expected time. The slash inherent will then be used for the reward distribution at the end of the batch.
 

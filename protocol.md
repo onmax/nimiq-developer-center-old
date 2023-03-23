@@ -2,75 +2,75 @@
 
 - Outdated
     
-    [View change protocol](chapters/View-change-protocol-fadf4240058944c4a48b72e5b9b30de1.md)
+    [TODO View change protocol](https://nimiq.com)
     
-    [Tendermint protocol](chapters/Tendermint-protocol-22c7bfb4c7924ae78f57e1db9039c95c.md)
+    [TODO Tendermint protocol](https://nimiq.com)
     
-    [Nodes and clients](chapters/Nodes-and-clients-df7dc991a723418da0b8b2cfec88c36a.md)
+    [TODO Nodes and clients](https://nimiq.com)
     
 
-[OASIS](chapters/OASIS.md)
+[OASIS](/protocol/OASIS.md)
 
-[Supply formula](chapters/supply-formula.md)
+<!-- [Supply formula](/protocol/supply-formula.md) -->
 
-[Glossary Nimiq 2.0](chapters/glossary.md)
+[Glossary Nimiq 2.0](/protocol/glossary.md)
 
-[Fork proofs](chapters/fork-proofs.md)
+[Fork proofs](/protocol/fork-proofs.md)
 
-[Rewards](chapters/rewards.md)
+[Rewards](/protocol/rewards.md)
 
-[Validator keys](chapters/validator-keys.md)
+[Validator keys](/protocol/validator-keys.md)
 
-[Punishments](chapters/punishments.md)
+[Punishments](/protocol/punishments.md)
 
-[Verifiable Random Functions](chapters/verifiable-random-functions.md)
+[Verifiable Random Functions](/protocol/verifiable-random-functions.md)
 
-[Staking Contract](chapters/staking-contract.md)
+[Staking Contract](/protocol/staking-contract.md)
 
-[Accounts](chapters/accounts.md)
+[Accounts](/protocol/accounts.md)
 
-[Optimistic and pessimistic mode](chapters/optimistic-and-pessimistic-mode.md)
+<!-- [Optimistic and pessimistic mode](/protocol/optimistic-and-pessimistic-mode.md) -->
 
-[Overview](chapters/overview.md)
+[Overview](/protocol/overview.md)
 
-[Abstract](chapters/abstract.md)
+<!-- [Abstract](/protocol/abstract.md) -->
 
-[ZKP and SNARKs](chapters/ZKP-and-SNARKs.md)
+[ZKP and SNARKs](/protocol/ZKP-and-SNARKs.md)
 
-[Security analysis](chapters/security-analysis.md)
+[Security analysis](/protocol/security-analysis.md)
 
-[Forks and upgrades](chapters/forks-and-upgrades.md)
+[Forks and upgrades](/protocol/forks-and-upgrades.md)
 
-[Skip blocks](chapters/skip-blocks.md)
+<!-- [Skip blocks](/protocol/skip-blocks.md) -->
 
-[Slots](chapters/slots.md)
+[Slots](/protocol/slots.md)
 
-[Block format](chapters/block-format.md)
+<!-- [Block format](/protocol/block-format.md) -->
 
-[Mempool](chapters/Mempool.md)
+<!-- [Mempool](/protocol/Mempool.md) -->
 
-[Transactions](chapters/Transactions.md)
+<!-- [Transactions](/protocol/TODO) -->
 
-[Albatross Alpha testnet](chapters/Albatross-Alpha-testnet.md)
+<!-- [Albatross Alpha testnet](/protocol/Albatross-Alpha-testnet.md) -->
 
-[Validator setup devnet](chapters/Validator-setup-devnet.md)
+<!-- [Validator setup devnet](/protocol/Validator-setup-devnet.md) -->
 
-[State sync](chapters/State-sync.md)
+<!-- [State sync](/protocol/State-sync.md) -->
 
-[Gossip](chapters/Gossip.md)
+<!-- [Gossip](/protocol/Gossip.md) -->
 
-[RPC client](chapters/RPC-client.md)
+<!-- [RPC client](/protocol/RPC-client.md) -->
 
-[RPC interface](chapters/RPC-interface.md)
+<!-- [RPC interface](/protocol/RPC-interface.md) -->
 
-[Prover node](chapters/prover-node.md)
+<!-- [Prover node](/protocol/prover-node.md) -->
 
-[Tendermint](chapters/tendermint.md)
+<!-- [Tendermint](/protocol/tendermint.md) -->
 
-[Nodes and sync](chapters/nodes-and-sync.md)
+<!-- [Nodes and sync](/protocol/nodes-and-sync.md) -->
 
-[Block Live Sync](chapters/block-live-sync.md)
+<!-- [Block Live Sync](/protocol/block-live-sync.md) -->
 
-[History Macro Sync](chapters/history-macro-sync.md)
+<!-- [History Macro Sync](/protocol/history-macro-sync.md) -->
 
-[Light Macro Sync](chapters/light-macro-sync.md)
+<!-- [Light Macro Sync](/protocol/light-macro-sync.md) -->

@@ -31,7 +31,7 @@ We define attacks by adversaries types. An adversary is a malicious individual w
 
 In Albatross, the probability of an adversary with 1/4 of the total stake controlling more than 1/3 of the validator list is nearly insignificant, as shown in the table below with a validator list with *n* validators.
 
-![adversary probability.drawio.png](Security%20analysis%20ea4b46a45a8d4d4881df1d5130d39bbf/adversary_probability.drawio.png)
+![adversary probability.png](/public/protocol/adversary_probability.png)
 
 **Static adversary**: an adversary that chooses to corrupt a set of fixed nodes in advance but later cannot change which nodes have been corrupted.
 
@@ -61,7 +61,7 @@ As in the PBFT protocol, Albatross favors consistency over availability. When a 
 
 If any disruption or split happens in the network, the protocol may continue to operate for a few blocks. Our protocol enables some blocks to be produced, and as soon as consistency is not being achieved, it stops. The following figure represents a simple example of a split network. If half A holds 2*f*+1 rational validators, in this case, three rational validators, they can produce valid blocks.
 
-![network partition.drawio.png](Security%20analysis%20ea4b46a45a8d4d4881df1d5130d39bbf/network_partition.drawio.png)
+![network partition.png](/public/protocol/network_partition.png)
 
 Once the operation returns to normal, the other half accepts the blocks produced, and the network goes back to operating as a whole.
 
@@ -75,7 +75,7 @@ $P(d)=(\frac{1}{3})^d$
 
 The probability decreases rapidly, as shown in the following table:
 
-![probability.drawio.png](Security%20analysis%20ea4b46a45a8d4d4881df1d5130d39bbf/probability.drawio.png)
+![probability.png](/public/protocol/probability.png)
 
 We also consider forks in micro blocks. According to the chain selection, the main chain is the chain with:
 
@@ -84,7 +84,7 @@ We also consider forks in micro blocks. According to the chain selection, the ma
 
 The following figure illustrates a chain. According to the table above and the chain's figure, at block 7, we can state that block 1 is final. Also, a fork occurred in block 8, and in this case, if the following validator is rational, it would not build or continue to produce on a fork. After noticing the fork and submitting a fork proof, it would choose which chain to produce, according to the chain selection rules.
 
-![fork in finality.drawio.png](Security%20analysis%20ea4b46a45a8d4d4881df1d5130d39bbf/fork_in_finality.drawio.png)
+![fork in finality.png](/public/protocol//fork_in_finality.png)
 
 Note that only a malicious validator would create or build on a fork, given that validators that misbehave get their rewards slashed. Additionally, if the following validators come upon to be malicious after the fork occurred, the fork ends at the next macro block.
 

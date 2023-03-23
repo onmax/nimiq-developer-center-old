@@ -46,7 +46,7 @@ To start the transaction, both sender and recipient must exchange their public k
 
 **Timelock** - a primitive that runs as a mechanism that locks the funds in the contract for a period of time, agreed between the sender and recipient. If both parties agree on 60 minutes timeframe, the recipient has 60 minutes to redeem the funds. Once the time elapses, the recipient can still redeem the funds, but the sender can also reclaim the funds back.
 
-![AND-OR.drawio.png](OASIS%206edaa4c8e7af424ab7f97dd3f2f2ca2b/AND-OR.drawio.png)
+![AND-OR.png](/public/protocol/oasis-AND-OR.png)
 
 This is an example of a script of a HTLC. If the root node evaluates to true, the script becomes satisfied. If one of the following conditions is true, the funds can be claimed.
 
@@ -76,7 +76,7 @@ Here's how they would proceed to an atomic swap:
 9. Bob can claim his BTC in the Bitcoin network after that, with his signature and the preimage that he now knows.
 10. The swap is complete!
 
-![Atomic Swap.drawio.png](OASIS%206edaa4c8e7af424ab7f97dd3f2f2ca2b/Atomic_Swap.drawio.png)
+![Atomic Swap.png](/public/protocol/atomic-swap.png)
 
 Possible failures of the swap:
 
@@ -119,15 +119,15 @@ Taking Alice and Bob as an example again, they want to exchange NIM for EUR, res
 
 **K.** The swap is complete!
 
-![1.png](OASIS%206edaa4c8e7af424ab7f97dd3f2f2ca2b/1.png)
+![1.png](/public/protocol/oasis-1.png)
 
-![2.png](OASIS%206edaa4c8e7af424ab7f97dd3f2f2ca2b/2.png)
+![2.png](/public/protocol/oasis-2.png)
 
-![3.png](OASIS%206edaa4c8e7af424ab7f97dd3f2f2ca2b/3.png)
+![3.png](/public/protocol/oasis-3.png)
 
-![4.png](OASIS%206edaa4c8e7af424ab7f97dd3f2f2ca2b/4.png)
+![4.png](/public/protocol/oasis-4.png)
 
-![5.png](OASIS%206edaa4c8e7af424ab7f97dd3f2f2ca2b/5.png)
+![5.png](/public/protocol/oasis-5.png)
 
 This is an implementation of Nimiq OASIS to achieve an atomic swap, but in this instance, between on- and off-chain assets, in an easy and decentralized way.
 

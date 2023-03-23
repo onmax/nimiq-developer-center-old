@@ -4,12 +4,12 @@ Note: the blue text will have links to the respective subjects.
 
 In Albatross, an elected validator that misbehaves gets punished. There are two types of misbehavior:
 
-- Forking the chain, which results in getting punished once a [fork proof](Fork%20proofs%2033a1b9a0485a448b8bacdf6e11e13e6b/Fork%20proofs%20(previous%20version)%20f843201234a34c2c834fa46e5460f79d.md) is submitted.
+- Forking the chain, which results in getting punished once a [fork proof](fork-proofs.md)%20f843201234a34c2c834fa46e5460f79d.md) is submitted.
 - Delaying the block production, which results in a skip block, thus the delayed validator getting punished.
 
 For these types of misbehavior, validators are punished in three modes:
 
-- The misbehaving validator gets its [rewards](Rewards%2091c0b210835740ed8d7f2b6a1fb60eb0/Rewards%20(previous%20version)%20d6343158ef7445f8905dcc33e9f04672.md) for the batch burned at the end of the next batch. This gives enough time for other validators to submit fork proofs. The burned rewards are sent to the burn address: NQ07 0000 0000 0000 0000 0000 0000 0000 0000.
+- The misbehaving validator gets its [rewards](rewards.md) for the batch burned at the end of the next batch. This gives enough time for other validators to submit fork proofs. The burned rewards are sent to the burn address: NQ07 0000 0000 0000 0000 0000 0000 0000 0000.
 - The misbehaving validator gets banned from validator slot selection, meaning that it can't produce micro blocks or propose macro blocks. Note that it can still sign macro blocks proposals. This only takes effect at the beginning of the next batch.
 - The validator gets punished by getting inactivated at the end of the epoch. This means it won't be eligible for validator slot selection in the next epoch.
 
@@ -33,7 +33,7 @@ When a validator gets inactivated, it remains in the staking contract, but it ca
 
 In the following figure, we explain three different scenarios where validators have misbehaved and how punishments are addressed:
 
-![Untitled Diagram.drawio.png](Punishments%20db3044882bd24830897b60a0a99bfab0/Untitled_Diagram.drawio.png)
+![Punishments](/public/protocol/punishments.png)
 
 *Figure 1*
 

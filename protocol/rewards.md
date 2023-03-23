@@ -1,6 +1,6 @@
 # Rewards
 
-[Rewards (previous version)](Rewards%2091c0b210835740ed8d7f2b6a1fb60eb0/Rewards%20(previous%20version)%20d6343158ef7445f8905dcc33e9f04672.md)
+<!-- [Rewards (previous version)](Rewards%2091c0b210835740ed8d7f2b6a1fb60eb0/Rewards%20(previous%20version)%20d6343158ef7445f8905dcc33e9f04672.md) -->
 
 In PoS blockchains, validators who follow the consensus rules are rewarded for their effort. In Albatross, validators stake NIM to participate in the consensus and they are incentivized to validate blocks according to the consensus in order to earn rewards, thus more NIM.
 
@@ -18,7 +18,7 @@ The rewards are equally divided among the validator list. Hence, the reward is e
 
 The following illustration serves for visualization purposes only. Validators that produce blocks during batch 1 receive their rewards at the end of batch 2, thus macro block H; validators that produce blocks during batch 2 receive their rewards at the end of batch 3, thus macro block L, and so on.
 
-![rewards distribution.drawio.png](Rewards%2091c0b210835740ed8d7f2b6a1fb60eb0/rewards_distribution.drawio.png)
+![rewards distribution.drawio.png](/public/protocol//rewards_distribution.png)
 
 ************************************Reward calculation************************************
 The rewards consist of the coinbase and the transaction fees. The coinbase is the number of new coins printed at the end of every batch, and the transaction fees are the sum of all transaction fees from a batch.
@@ -39,4 +39,4 @@ Additionally, 𝑡 is the time elapsed since the genesis block, and *e* is the
 
 Essentially, the coinbase is calculated by subtracting the supply calculated in the blockchain at any given time from the previous supply, which is the total amount of NIM at the end of the last batch. This is calculated at the exact moment the reward is distributed.
 
-For a detailed explanation of the supply formula to calculate the coinbase, [click here](Supply%20formula%2053f87471a30649dca537425e8f644f43.md).
+For a detailed explanation of the supply formula to calculate the coinbase, [TODO supply formula click here](https://nimiq.com).

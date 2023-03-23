@@ -23,7 +23,7 @@ A new validator list is elected from the active validator set in each epoch. The
 
 Lastly, the addresses are ordered alphabetically, creating a slot range for the validators that compresses the validator list. The following figure illustrates hypothetically how the validator slot list is saved, how the validators are ordered, and the range of validator slots each validator owns:
 
-![5.drawio.png](Slots%2073881ed12bb340cb93e8ed82950dde11/5.drawio.png)
+![5.drawio.png](/public/protocol/slots.png)
 
 *Figure 1*
 

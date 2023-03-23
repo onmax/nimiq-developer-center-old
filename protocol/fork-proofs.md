@@ -1,6 +1,6 @@
 # Fork proofs
 
-[Fork proofs (previous version)](Fork%20proofs%2033a1b9a0485a448b8bacdf6e11e13e6b/Fork%20proofs%20(previous%20version)%20f843201234a34c2c834fa46e5460f79d.md)
+<!-- [Fork proofs (previous version)](Fork%20proofs%2033a1b9a0485a448b8bacdf6e11e13e6b/Fork%20proofs%20(previous%20version)%20f843201234a34c2c834fa46e5460f79d.md) -->
 
 A fork in the blockchain occurs when two blocks are produced at the same block height, resulting in a split in the chain. Malicious validators create forks, mostly to attempt a double-spend attack, and are considered a punishable behavior. We consider both starting a fork and continuing to produce one punishable.
 
@@ -17,7 +17,7 @@ Forks can end in two ways:
 
 Either way, validators can submit a **fork proof** to attest to the split upon noticing a fork in the chain. Validators submit a fork proof that will include the two blocks with the same block height and signed by the same validator, proving the fork occurred.
 
-![image.png](Fork%20proofs%2033a1b9a0485a448b8bacdf6e11e13e6b/image.png)
+![image.png](/public/protocol/fork-proof-1.png)
 
 Consider the illustration above. The upper chain is the canonical chain. At block height 4, the validator produces two blocks with the same block number. But, at block height 5, the validator selected to produce the block notices the fork and ends it by choosing the chain to produce it, producing a single block and thus ending the fork. At block height 5, the validator can also submit a fork proof attesting the fork of the previous block height.
 
@@ -29,7 +29,7 @@ A validator includes a fork proof in a micro block to prove that a malicious val
 
 Using the illustration below as a reference, we consider several validators have continued to build on the fork that started at block height 4 and ended at block height 8. There were 4 blocks produced in double, so 4 fork proofs must be included until the end of the next batch.
 
-![image (1).png](Fork%20proofs%2033a1b9a0485a448b8bacdf6e11e13e6b/image_(1).png)
+![image.png](/public/protocol/fork-proof-2.png)
 
 As validators sign the blocks they have produced, these signatures can prove that a validator has misbehaved. The fork proof consists of the header of each micro block, the respective micro block justification, and the previous random seed. Fork proofs are included in the micro block body.
 
@@ -51,4 +51,4 @@ $P(d)=(\frac{1}{3})^d$
 
 As indicated in the table below, the probability declines rapidly:
 
-![probability.drawio.png](Fork%20proofs%2033a1b9a0485a448b8bacdf6e11e13e6b/probability.drawio.png)
+![fork-probability.png](/public/protocol/fork-probability.png)

@@ -23,7 +23,7 @@ Albatross uses the [ed25519](https://ed25519.cr.yp.to/) algorithm to generate [S
 Validators use their address corresponding key to:
 
 - Sign transactions.
-- Create, update and drop the validator in the [staking contract](Staking%20Contract%208f2c294b41704fa19a4350e73dc0f9e2.md).
+- Create, update and drop the validator in the [staking contract](staking-contract.md).
 
 **Signing key**
 
@@ -32,7 +32,7 @@ Validators use this key pair to:
 - Sign micro blocks.
 - Sign fork proofs.
 - Sign the macro block proposal from its proposer.
-- Generate the [VRF](Verifiable%20Random%20Functions%2070d76d3016f1464aa21d5a764f8583cb.md) seed for the random seed present in every block.
+- Generate the [VRF](verifiable-random-functions.md) seed for the random seed present in every block.
 - Retire, reactivate and unpark the validator in the staking contract.
 
 **Voting key**
@@ -42,6 +42,6 @@ Validators use this key pair to:
 - Vote for a skip block.
 - Vote for macro block proposals following the Tendermint protocol.
 
-Although both signature schemes generate short signatures, Albatross only uses the BLS signature scheme to aggregate signatures. As voting for [Tendermint](Tendermint%20protocol%2022c7bfb4c7924ae78f57e1db9039c95c.md)'s proposals and skip blocks requires multiple validators to sign, we opted for the BLS signature scheme to aggregate all validator’s signatures into one. This aggregation decreases the amount of space in storage that multiple signatures consist of.
+Although both signature schemes generate short signatures, Albatross only uses the BLS signature scheme to aggregate signatures. As voting for [TODO](https://nimiq.com)'s proposals and skip blocks requires multiple validators to sign, we opted for the BLS signature scheme to aggregate all validator’s signatures into one. This aggregation decreases the amount of space in storage that multiple signatures consist of.
 
 The reason for the three sets of keys is due to operational security. The key corresponding to the validator’s address is immutable, while the signing and voting keys are mutable, and validators can change them by sending an update message.
