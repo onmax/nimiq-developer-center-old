@@ -1,6 +1,6 @@
 # Validator keys
 
-A key pair consists of a public key and a private key, mathematically linked to each other. A private key authenticates a signer's address, and the public key allows a user to verify the signer's authenticity. Each address in Nimiq’s blockchain has an associated key. In Albatross, different keys are used to sign different types of transactions.
+A key pair consists of a public key and a private key, mathematically linked to each other. A private key authenticates a signer's address, and the public key allows a user to verify the signer's authenticity. Each address in Nimiq’s blockchain has an associated key. In the protocol, different keys are used to sign different types of transactions.
 
 As with all blockchain users, validators need keys to interact with the network. Once a user proposes to validate blocks and stake their coins, three sets of keys are generated:
 
@@ -10,7 +10,7 @@ As with all blockchain users, validators need keys to interact with the network.
 
 ### BLS (Boneh–Lynn–Shacham)
 
-The BLS signature scheme uses a key pair to sign and verify messages. This signature scheme generates short signatures. Albatross uses the [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) signature scheme for signature aggregation, combining *n* signatures into a single one. To aggregate multiple signatures on the same message, validators calculate their public keys combined and the message. Then, all signatures are aggregated into a single one by summing all up. Therefore, we obtain a single signature and a single public key, saving substantial space.
+The BLS signature scheme uses a key pair to sign and verify messages. This signature scheme generates short signatures. We use the [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) signature scheme for signature aggregation, combining _n_ signatures into a single one. To aggregate multiple signatures on the same message, validators calculate their public keys combined and the message. Then, all signatures are aggregated into a single one by summing all up. Therefore, we obtain a single signature and a single public key, saving substantial space.
 
 ### Schnorr keys
 

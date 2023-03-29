@@ -1,13 +1,4 @@
-# Albatross
-
-- Outdated
-    
-    [TODO View change protocol](https://nimiq.com)
-    
-    [TODO Tendermint protocol](https://nimiq.com)
-    
-    [TODO Nodes and clients](https://nimiq.com)
-    
+# Nimiq 2.0
 
 [OASIS](/protocol/OASIS.md)
 
@@ -29,11 +20,9 @@
 
 [Accounts](/protocol/accounts.md)
 
-<!-- [Optimistic and pessimistic mode](/protocol/optimistic-and-pessimistic-mode.md) -->
+[Optimistic and pessimistic mode](/protocol/optimistic-and-pessimistic-mode.md)
 
 [Overview](/protocol/overview.md)
-
-<!-- [Abstract](/protocol/abstract.md) -->
 
 [ZKP and SNARKs](/protocol/ZKP-and-SNARKs.md)
 
@@ -41,7 +30,7 @@
 
 [Forks and upgrades](/protocol/forks-and-upgrades.md)
 
-<!-- [Skip blocks](/protocol/skip-blocks.md) -->
+[Skip blocks](/protocol/skip-blocks.md)
 
 [Slots](/protocol/slots.md)
 

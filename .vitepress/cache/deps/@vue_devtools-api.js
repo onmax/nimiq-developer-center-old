@@ -1,8 +1,8 @@
 // node_modules/@vue/devtools-api/lib/esm/env.js
-function getDevtoolsGlobalHook(./) {
-  return getTarget(./).__VUE_DEVTOOLS_GLOBAL_HOOK__;
+function getDevtoolsGlobalHook() {
+  return getTarget().__VUE_DEVTOOLS_GLOBAL_HOOK__;
 }
-function getTarget(./) {
+function getTarget() {
   return typeof navigator !== "undefined" && typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {};
 }
 var isProxyAvailable = typeof Proxy === "function";
@@ -14,7 +14,7 @@ var HOOK_PLUGIN_SETTINGS_SET = "plugin:settings:set";
 // node_modules/@vue/devtools-api/lib/esm/time.js
 var supported;
 var perf;
-function isPerformanceSupported(./) {
+function isPerformanceSupported() {
   var _a;
   if (supported !== void 0) {
     return supported;
@@ -30,8 +30,8 @@ function isPerformanceSupported(./) {
   }
   return supported;
 }
-function now(./) {
-  return isPerformanceSupported(./) ? perf.now(./) : Date.now(./);
+function now() {
+  return isPerformanceSupported() ? perf.now() : Date.now();
 }
 
 // node_modules/@vue/devtools-api/lib/esm/proxy.js
@@ -58,7 +58,7 @@ var ApiProxy = class {
     } catch (e) {
     }
     this.fallbacks = {
-      getSettings(./) {
+      getSettings() {
         return currentSettings;
       },
       setSettings(value) {
@@ -68,8 +68,8 @@ var ApiProxy = class {
         }
         currentSettings = value;
       },
-      now(./) {
-        return now(./);
+      now() {
+        return now();
       }
     };
     if (hook) {
@@ -104,7 +104,7 @@ var ApiProxy = class {
             this.targetQueue.push({
               method: prop,
               args,
-              resolve: (./) => {
+              resolve: () => {
               }
             });
             return this.fallbacks[prop](...args);
@@ -137,8 +137,8 @@ var ApiProxy = class {
 // node_modules/@vue/devtools-api/lib/esm/index.js
 function setupDevtoolsPlugin(pluginDescriptor, setupFn) {
   const descriptor = pluginDescriptor;
-  const target = getTarget(./);
-  const hook = getDevtoolsGlobalHook(./);
+  const target = getTarget();
+  const hook = getDevtoolsGlobalHook();
   const enableProxy = isProxyAvailable && descriptor.enableEarlyProxy;
   if (hook && (target.__VUE_DEVTOOLS_PLUGIN_API_AVAILABLE__ || !enableProxy)) {
     hook.emit(HOOK_SETUP, pluginDescriptor, setupFn);

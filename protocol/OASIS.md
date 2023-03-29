@@ -2,66 +2,95 @@
 
 Requirements - For a better understanding of the following document, you need to have some knowledge about:
 
-- Smart contracts:
+<details>
+  <summary>Smart contracts</summary>
+  
+  - [https://en.wikipedia.org/wiki/Smart_contract](https://en.wikipedia.org/wiki/Smart_contract)
+  - [https://www.investopedia.com/terms/s/smart-contracts.asp](https://www.investopedia.com/terms/s/smart-contracts.asp)
+  - [https://www.youtube.com/watch?v=csS1mZFuNSY&ab_channel=Computerphile](https://www.youtube.com/watch?v=csS1mZFuNSY&ab_channel=Computerphile)
 
-[https://en.wikipedia.org/wiki/Smart_contract](https://en.wikipedia.org/wiki/Smart_contract)
+</details>
 
-[https://www.investopedia.com/terms/s/smart-contracts.asp](https://www.investopedia.com/terms/s/smart-contracts.asp)
+<details>
+  <summary>Digital signatures</summary>
+  
+  - [https://www.youtube.com/watch?v=s22eJ1eVLTU&ab_channel=Computerphile](https://www.youtube.com/watch?v=s22eJ1eVLTU&ab_channel=Computerphile)
+  - [https://en.wikipedia.org/wiki/Digital_signature](https://en.wikipedia.org/wiki/Digital_signature)
+  - [https://en.wikipedia.org/wiki/Public-key_cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography)
 
-[https://www.youtube.com/watch?v=csS1mZFuNSY&ab_channel=Computerphile](https://www.youtube.com/watch?v=csS1mZFuNSY&ab_channel=Computerphile)
+</details>
 
-- Digital signatures:
+<details>
+  <summary>Hash functions</summary>
+  
+  - [https://en.wikipedia.org/wiki/Cryptographic_hash_function](https://en.wikipedia.org/wiki/Cryptographic_hash_function)
+  - [https://www.youtube.com/watch?v=b4b8ktEV4Bg&ab_channel=Computerphile](https://www.youtube.com/watch?v=b4b8ktEV4Bg&ab_channel=Computerphile)
+  - [https://www.browserling.com/tools/sha2-hash](https://www.browserling.com/tools/sha2-hash)
 
-[https://www.youtube.com/watch?v=s22eJ1eVLTU&ab_channel=Computerphile](https://www.youtube.com/watch?v=s22eJ1eVLTU&ab_channel=Computerphile)
+</details>
 
-[https://en.wikipedia.org/wiki/Digital_signature](https://en.wikipedia.org/wiki/Digital_signature)
+<details>
+  <summary>Elliptic-curve cryptography</summary>
+  
+  - [https://en.wikipedia.org/wiki/Elliptic-curve_cryptography](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography)
+  - [https://www.youtube.com/watch?v=NF1pwjL9-DE&ab_channel=Computerphile](https://www.youtube.com/watch?v=NF1pwjL9-DE&ab_channel=Computerphile)
 
-[https://en.wikipedia.org/wiki/Public-key_cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography)
+</details>
 
-- Hash functions:
+<br/>
 
-[https://en.wikipedia.org/wiki/Cryptographic_hash_function](https://en.wikipedia.org/wiki/Cryptographic_hash_function)
+OASIS is a protocol that enables an atomic swap between on and off-chain assets through the implementation of two HTLCs. Despite having several use cases, we describe in this document what a HTLC is, how it is implemented in atomic swaps, followed by how Nimiq OASIS covers an atomic swap between fiat and crypto.
 
-[https://www.youtube.com/watch?v=b4b8ktEV4Bg&ab_channel=Computerphile](https://www.youtube.com/watch?v=b4b8ktEV4Bg&ab_channel=Computerphile)
-
-[https://www.browserling.com/tools/sha2-hash](https://www.browserling.com/tools/sha2-hash)
-
-- Elliptic-curve cryptography:
-
-[https://en.wikipedia.org/wiki/Elliptic-curve_cryptography](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography)
-
-[https://www.youtube.com/watch?v=NF1pwjL9-DE&ab_channel=Computerphile](https://www.youtube.com/watch?v=NF1pwjL9-DE&ab_channel=Computerphile)
-
-Nimiq OASIS is a protocol that enables an atomic swap between on and off-chain assets through the implementation of two HTLCs. Despite having several use cases, we describe in this document what a HTLC is, how it is implemented in atomic swaps, followed by how Nimiq OASIS covers an atomic swap between fiat and crypto.
+<br/>
 
 ### **HTLC - Hashed Timelock Contract**
 
 A HTLC is a conditional payment implemented by a script in the blockchain. It's a smart contract that enables a party to transact assets to another party without relying on a third one. Hence, it's a contract between two parties: a sender and a recipient.
 
+<br/>
+
 To start the transaction, both sender and recipient must exchange their public keys. By doing so, they can later prove each other identity. Once the public keys are exchanged, the sender generates a HTLC and sends its assets to the contract, locking it with a hashlock and a timelock. These locks are the primitives of the contract, along with the digital signatures of both parties, which serve as a key to unlock the assets. As soon as the funds are locked in the contract, the recipient must provide the sender’s public key to redeem the funds. The transaction only occurs if the script is satisfied given the primitives. Therefore, if the conditions aren't achieved, the funds are sent automatically back to the sender.
+
+<br/>
 
 **Digital signature** - A primitive that locks the funds until a signature is verified. The sender generates a key pair: a private key and a public key. Then, he sends his public key to the recipient. The recipient must provide the sender's public key to redeem the funds. This authenticates both sender and recipient, as to unlock the transaction, the public key must correspond to the private key.
 
-**Hashlock** - a primitive that locks the funds until a valid piece of data is revealed. To create a hashlock, the sender generates a secret called the *preimage*. Then, he hashes it through a cryptographic hash function. The function takes as input a piece of binary data of variable size - the preimage - and hashes it into a fixed-sized output called the *image*. The sender uses the image to lock the funds as a hashlock, and the recipient must provide the correspondent preimage to unlock the funds.
+**Hashlock** - a primitive that locks the funds until a valid piece of data is revealed. To create a hashlock, the sender generates a secret called the _preimage_. Then, he hashes it through a cryptographic hash function. The function takes as input a piece of binary data of variable size - the preimage - and hashes it into a fixed-sized output called the _image_. The sender uses the image to lock the funds as a hashlock, and the recipient must provide the correspondent preimage to unlock the funds.
 
 **Timelock** - a primitive that runs as a mechanism that locks the funds in the contract for a period of time, agreed between the sender and recipient. If both parties agree on 60 minutes timeframe, the recipient has 60 minutes to redeem the funds. Once the time elapses, the recipient can still redeem the funds, but the sender can also reclaim the funds back.
 
+<br/>
+
 ![AND-OR.png](/public/protocol/oasis-AND-OR.png)
 
+<br/>
+
 This is an example of a script of a HTLC. If the root node evaluates to true, the script becomes satisfied. If one of the following conditions is true, the funds can be claimed.
+
+<br/>
 
 - Condition 1: if the sender's public key is valid and the preimage of the hashlock is correct, then the funds can be claimed.
 - Condition 2: if the recipient's public key is valid and the timelock has elapsed, then the funds can be refunded by the sender.
 
+<br/>
+
 HTLC's have several use cases, but, in this instance, they are used to implement the OASIS protocol, which allows parties who don't trust each other to exchange assets. They are the starting point for atomic swaps, which we will explore next.
+
+<br/>
 
 ### **ATOMIC SWAP**
 
 Atomic swap is a transactional protocol used to exchange assets between different blockchains. The word "atomic" relates to the transaction result: either the swap occurs entirely, or it doesn't occur at all.
 
+<br/>
+
 The agreement allows cross-chain transactions between two parties to exchange their assets. Both parties generate a HTLC in their respective blockchains, one in each network. The same hashlock connects the two HTLCs, so the same preimage is used to unlock the funds from both contracts.
 
+<br/>
+
 Let's imagine that Alice and Bob want to swap BTC for NIM, respectively. They each need an address in each blockchain to achieve the swap, totaling four addresses.
+
+<br/>
 
 Here's how they would proceed to an atomic swap:
 
@@ -76,7 +105,11 @@ Here's how they would proceed to an atomic swap:
 9. Bob can claim his BTC in the Bitcoin network after that, with his signature and the preimage that he now knows.
 10. The swap is complete!
 
+<br/>
+
 ![Atomic Swap.png](/public/protocol/atomic-swap.png)
+
+<br/>
 
 Possible failures of the swap:
 
@@ -85,15 +118,25 @@ Possible failures of the swap:
 - If Bob doesn't create his HTLC or misses any contract agreement, Alice waits until the timelock expires, sends a transaction to the BTC network, and requests her funds back.
 - If by any chance Alice doesn't claim Bob's funds, both wait until the timelock elapses, and they both can ask back their funds in the respective blockchains.
 
+<br/>
+
 This ease of executing transactions inspired Nimiq to create its kind of atomic exchange, but with Nimiq OASIS the exchange takes place between fiat and cryptocurrency.
+
+<br/>
 
 ### **OASIS**
 
 The core of OASIS is using the atomic swap protocol as a principle, enabling transactions between on-chain assets, in the blockchain and off-chain assets, outside the blockchain. It combines a HTLC and a HTLA - a hashed timelock agreement.
 
+<br/>
+
 A HTLA is an agreement that uses the same primitives as a HTLC. The HTLA can be implemented by any entity that can act as an escrow party for the agreement, the same way as the blockchain acts as an escrow party of the HTLC.
 
+<br/>
+
 The OASIS Bank is the escrow party of the off-chain assets, allowing the implementation of the HTLA. The bank is what enables the swap between on- and off-chain assets. The exchanging parties must each have a SEPA-Instant-supported bank account in a fiat and crypto swap.
+
+<br/>
 
 Taking Alice and Bob as an example again, they want to exchange NIM for EUR, respectively. They will each need an address in Nimiq's blockchain and a bank account that supports SEPA-Instant transfers. Let's see how, in this case, they would proceed:
 
@@ -119,6 +162,8 @@ Taking Alice and Bob as an example again, they want to exchange NIM for EUR, res
 
 **K.** The swap is complete!
 
+<br/>
+
 ![1.png](/public/protocol/oasis-1.png)
 
 ![2.png](/public/protocol/oasis-2.png)
@@ -129,6 +174,6 @@ Taking Alice and Bob as an example again, they want to exchange NIM for EUR, res
 
 ![5.png](/public/protocol/oasis-5.png)
 
-This is an implementation of Nimiq OASIS to achieve an atomic swap, but in this instance, between on- and off-chain assets, in an easy and decentralized way.
+<br/>
 
-In the future, it will also be possible to exchange other assets such as stocks certificates, web domains, and many more.
+This is an implementation of Nimiq OASIS to achieve an atomic swap, but in this instance, between on- and off-chain assets, in an easy and decentralized way. In the future, it will also be possible to exchange other assets such as stocks certificates, web domains, and many more.

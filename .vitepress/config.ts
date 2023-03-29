@@ -1,39 +1,53 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/nimiq-developer-center/',
+  base: "/nimiq-developer-center/",
   title: "Nimiq Developer Center",
   description: "A VitePress Site",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Protocol', link: '/protocol' },
-      { text: 'Nodes', link: '/nodes' },
-      { text: 'UI', link: '/ui' },
+      { text: "Home", link: "/" },
+      { text: "Protocol", link: "/protocol" },
+      { text: "Nodes", link: "/nodes" },
+      { text: "UI", link: "/ui" },
     ],
 
     sidebar: [
-      { text: 'Glossary', link: '/glossary' },
+      { text: "Glossary", link: "/protocol/glossary" },
       {
-        text: 'Protocol Chapters',
+        text: "Protocol Chapters",
         items: [
-          { text: 'Accounts', link: '/protocol/accounts' },
-          { text: 'Fork proofs', link: '/protocol/fork-proofs' },
-          { text: 'Forks-and-upgrades', link: '/protocol/forks-and-upgrades' },
-        ]
+          { text: "Accounts", link: "/protocol/accounts" },
+          { text: "Fork proofs", link: "/protocol/fork-proofs" },
+          { text: "Forks-and-upgrades", link: "/protocol/forks-and-upgrades" },
+          { text: "OASIS", link: "/protocol/OASIS" },
+          {
+            text: "Optimistic and pessimistic modes",
+            link: "protocoloptimistic-and-pessimistic-mode.md",
+          },
+          { text: "Overview", link: "/protocol/overview" },
+          { text: "Punishments", link: "/protocol/punishments" },
+          { text: "Rewards", link: "/protocol/rewards" },
+          { text: "Security Analysis", link: "/protocol/security-analysis" },
+          { text: "Skip blocks", link: "/protocol/skip-blocks" },
+          { text: "Slots", link: "/protocol/Slots" },
+          { text: "Staking Contract", link: "/protocol/staking-contract" },
+          { text: "Validator keys", link: "/protocol/validator-keys" },
+          { text: "VRF", link: "/protocol/verifiable-random-functions" },
+          {
+            text: "Zero-knowledge proofs and SNARKs",
+            link: "protocolZKP-and-SNARKs.md",
+          },
+        ],
       },
       {
-        text: 'Run your own node',
-        items: [
-          { text: 'Run a full node', link: 'https://nimiq.com' },
-        ]
-      }
+        text: "Run your own node",
+        items: [{ text: "Run a full node", link: "https://nimiq.com" }],
+      },
     ],
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/onmax/' }
-    ]
-  }
-})
+    socialLinks: [{ icon: "github", link: "https://github.com/onmax/" }],
+  },
+});

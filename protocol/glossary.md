@@ -14,11 +14,11 @@ The outcome of calculating multiple signatures into a single signature. Aggregat
 
 ### **Albatross**
 
-Nimiq proof-of-stake algorithm. It is an algorithm inspired by the BFT protocol, assuming that 3*f*+1 validators, at maximum *f*, are malicious. Albatross achieves probabilistic finality by combining micro blocks and macro blocks. Micro blocks are produced and signed by a single validator, while macro blocks mark the end of an epoch and are produced using Tendermint, which ensures finality as they are agreed upon by at least 2f+1 validators.
+Nimiq proof-of-stake algorithm. It is an algorithm inspired by the BFT protocol, assuming that 3*f*+1 validators, at maximum *f*, are malicious. Nimiq PoS protocol achieves probabilistic finality by combining micro blocks and macro blocks. Micro blocks are produced and signed by a single validator, while macro blocks mark the end of an epoch and are produced using Tendermint, which ensures finality as they are agreed upon by at least 2f+1 validators.
 
 ### **BLS signature**
 
-The BLS signature scheme uses bilinear pairing and elliptic curve cryptography and has many valuable features. In Albatross, BLS is used for signature aggregation, allowing n signatures to be combined into a single signature, significantly decreasing the required data. Validators generate a public and private key, and each validator uses their private key to produce a signature. BLS signatures allow for efficient signature aggregation, resulting in substantial space savings.
+The BLS signature scheme uses bilinear pairing and elliptic curve cryptography and has many valuable features. In Nimiq PoS, BLS is used for signature aggregation, allowing n signatures to be combined into a single signature, significantly decreasing the required data. Validators generate a public and private key, and each validator uses their private key to produce a signature. BLS signatures allow for efficient signature aggregation, resulting in substantial space savings.
 
 ### **Batch**
 
@@ -26,7 +26,7 @@ The interval between two macro blocks, election or checkpoint macro blocks. A ba
 
 ### **Block**
 
-A block contains a set of transactions and data attesting to the transactions’ validity. Albatross holds 2 types of blocks: micro blocks and macro blocks. Validators are responsible for gathering and adding data to a block based on consensus rules. The block's validity is determined by the data contained within it, and it is added to the blockchain once the network verifies it.
+A block contains a set of transactions and data attesting to the transactions’ validity. Our blockchain holds 2 types of blocks: micro blocks and macro blocks. Validators are responsible for gathering and adding data to a block based on consensus rules. The block's validity is determined by the data contained within it, and it is added to the blockchain once the network verifies it.
 
 ### **Block number**
 
@@ -46,7 +46,7 @@ Given our supply formula, the coinbase is the number of new coins printed at the
 
 ### **Commitment**
 
-A commitment is a cryptographic primitive that enables a node to commit to a value without revealing it, resulting in less data to the endpoint. The value on which the node committed remains private, but its accuracy can be proven without revealing the value itself. The value is part of the proof, and nodes can verify that the value matches the commitment. In Albatross, we use commitments in three areas: commitments to specific parts of the blockchain, such as transactions in a block and accounts in the current state, state commitments as input to the zero-knowledge proofs in the light sync, and commitments to secret values in our multi-sig scheme. Ultimately, using commitments enables data compaction by using hashes and Merkle trees. For instance, it allows light clients to sync without downloading the entire blockchain while preserving the integrity of the blockchain.
+A commitment is a cryptographic primitive that enables a node to commit to a value without revealing it, resulting in less data to the endpoint. The value on which the node committed remains private, but its accuracy can be proven without revealing the value itself. The value is part of the proof, and nodes can verify that the value matches the commitment. In our consensus algortihm, we use commitments in three areas: commitments to specific parts of the blockchain, such as transactions in a block and accounts in the current state, state commitments as input to the zero-knowledge proofs in the light sync, and commitments to secret values in our multi-sig scheme. Ultimately, using commitments enables data compaction by using hashes and Merkle trees. For instance, it allows light clients to sync without downloading the entire blockchain while preserving the integrity of the blockchain.
 
 ### **Compressed signature**
 
@@ -58,7 +58,7 @@ A type of algorithm used to reach an agreement between nodes in a shared state. 
 
 ### **Disabled slot set**
 
-A set of slots not eligible to produce blocks due to misbehaving. This is one of the three punishment sets in Albatross. Validators must send an unpark transaction referring to their disabled slot to resume the block production. We include a disabled set for the previous epoch and another one for the current epoch, as it affects the rewards distribution for a batch; thus, they get their rewards burned.
+A set of slots not eligible to produce blocks due to misbehaving. This is one of the three punishment sets in the staking contract. Validators must send an unpark transaction referring to their disabled slot to resume the block production. We include a disabled set for the previous epoch and another one for the current epoch, as it affects the rewards distribution for a batch; thus, they get their rewards burned.
 
 ### **Election block**
 
