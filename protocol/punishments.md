@@ -90,6 +90,8 @@ Parked validators have until the end of the epoch to send this transaction, othe
 
 In the following figure, we explain three different scenarios where validators have misbehaved and how punishments are addressed:
 
+<br/>
+
 <p align="center">
   <img src="/public/protocol/punishments.png" alt="Alt Text" width="600" height="300">
 </p>

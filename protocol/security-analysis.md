@@ -47,7 +47,9 @@ In Nimiq Proof-of-Stake, the probability of an adversary with 1/4 of the total s
 
 <br/>
 
-![adversary probability.png](/public/protocol/adversary_probability.png)
+<p align="center">
+  <img src="/public/protocol/adversary_probability.png" alt="Alt Text" width="400" height="200">
+</p>
 
 <br/>
 
@@ -97,7 +99,9 @@ If any disruption or split happens in the network, the protocol may continue to 
 
 <br/>
 
-![network partition.png](/public/protocol/network_partition.png)
+<p align="center">
+  <img src="/public/protocol/network_partition.png" alt="Alt Text" width="300" height="150">
+</p>
 
 <br/>
 
@@ -121,7 +125,9 @@ In micro blocks, finality can be achieved after six blocks are produced. The pro
 
 The probability decreases rapidly, as shown in the following table:
 
-![probability.png](/public/protocol/probability.png)
+<p align="center">
+  <img src="/public/protocol/probability.png" alt="Alt Text" width="500" height="250">
+</p>
 
 <br/>
 

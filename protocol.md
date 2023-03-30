@@ -34,11 +34,11 @@
 
 [Slots](/protocol/slots.md)
 
-<!-- [Block format](/protocol/block-format.md) -->
+[Block format](/protocol/block-format.md)
 
-<!-- [Mempool](/protocol/Mempool.md) -->
+[Mempool](/protocol/mempool.md)
 
-<!-- [Transactions](/protocol/TODO) -->
+[Messages and requests](/protocol/messages-and-requests.md)
 
 <!-- [Albatross Alpha testnet](/protocol/Albatross-Alpha-testnet.md) -->
 
@@ -48,18 +48,18 @@
 
 <!-- [Gossip](/protocol/Gossip.md) -->
 
-<!-- [RPC client](/protocol/RPC-client.md) -->
+[RPC client](/protocol/rpc-client.md)
 
 <!-- [RPC interface](/protocol/RPC-interface.md) -->
 
-<!-- [Prover node](/protocol/prover-node.md) -->
+[Prover node](/protocol/prover-node.md)
 
 <!-- [Tendermint](/protocol/tendermint.md) -->
 
-<!-- [Nodes and sync](/protocol/nodes-and-sync.md) -->
+[Nodes and sync](/protocol/nodes-and-sync.md)
 
-<!-- [Block Live Sync](/protocol/block-live-sync.md) -->
+[Block Live Sync](/protocol/block-live-sync.md)
 
-<!-- [History Macro Sync](/protocol/history-macro-sync.md) -->
+[History Macro Sync](/protocol/history-macro-sync.md)
 
-<!-- [Light Macro Sync](/protocol/light-macro-sync.md) -->
+[Light Macro Sync](/protocol/light-macro-sync.md)
