@@ -18,6 +18,7 @@ export default defineConfig({
       { text: "Glossary", link: "/protocol/glossary" },
       {
         text: "Protocol Chapters",
+        collapsed: false,
         items: [
           { text: "Accounts", link: "/protocol/accounts" },
           { text: "Block format", link: "/protocol/block-format" },
@@ -55,8 +56,18 @@ export default defineConfig({
         ],
       },
       {
-        text: "Run your own node",
-        items: [{ text: "Run a full node", link: "https://nimiq.com" }],
+        text: "Testnet",
+        collapsed: false,
+        items: [
+          {
+            text: "Becoming a validator",
+            link: "/protocol/becoming-a-validator.md",
+          },
+          {
+            text: "Becoming a validator using JSON-CLI",
+            link: "/protocol/becoming-a-validator-cli.md",
+          },
+        ],
       },
     ],
 

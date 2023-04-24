@@ -138,7 +138,7 @@ Every block, macro or micro, is connected to the previous one by the parent hash
 
 ### Blockchain format
 
-Nimiq 2.0 blockchain is divided into batches and epochs:
+The blockchain is divided into batches and epochs:
 
 Batch - The interval between two macro blocks. A batch consists of several micro blocks, closing on a macro block.
 
@@ -146,7 +146,7 @@ Epoch - The interval between two election macro blocks marks an epoch. It starts
 
 <br/>
 
-The following figure illustrates how Nimiq 2.0 blockchain is divided.
+The following figure illustrates how the blockchain is divided.
 
 <br/>
 

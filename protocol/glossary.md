@@ -1,4 +1,4 @@
-# Glossary Nimiq 2.0
+# Glossary Nimiq PoS
 
 ### **Account**
 
@@ -178,7 +178,7 @@ A special contract that deals with functions regarding validators, stakers, and 
 
 ### **Supply**
 
-Based on the supply formula, the supply is the number of coins in the blockchain at any given moment. Nimiq 2.0 has a maximum supply of 21 Billion NIM.
+Based on the supply formula, the supply is the number of coins in the blockchain at any given moment. The blockchain has a maximum supply of 21 Billion NIM.
 
 ### **Tendermint**
 

@@ -17,20 +17,20 @@ Nimiq Proof-of-Stake has two modes for consensus: optimistic and pessimistic mod
 
 <br/>
 
-**Pessimist mode** - We can also anticipate that some validators can maliciously behave. Validators that act maliciously get punished. Nimiq 2.0 blockchain is inspired by the BFT algorithm, so it tolerates up to one-third of the validators misbehaving. Even considering this case, we can still achieve a decent block production performance. Next, we explain how to achieve the expected performance with malicious validators on:
+**Pessimist mode** - We can also anticipate that some validators can maliciously behave. Validators that act maliciously get punished. Nimiq PoS blockchain is inspired by the BFT algorithm, so it tolerates up to one-third of the validators misbehaving. Even considering this case, we can still achieve a decent block production performance. Next, we explain how to achieve the expected performance with malicious validators on:
 
 - Micro blocks: Each micro block is produced by a selected validator. Malicious validators can tamper with the blockchain by:
 
   - Attempting to fork the chain. In this case, as soon as a rational validator notices the fork, it can submit a [fork proof](fork-proofs.md). The malicious validator is punished once this fork proof is sent to the network.
-  - Delaying the micro block production. A rational validator can sign a skip block [TODO view-change](https://nimiq.com)message and wait for 2*f*+1 signatures. As soon as the skip blocks receive 2*f*+1 signatures, a validator from the validator list can add this block. The delayed validator is then punished.
+  - Delaying the micro block production. A rational validator can sign a skip block message and wait for 2*f*+1 signatures. As soon as the skip blocks receive 2*f*+1 signatures, a validator from the validator list can add this block. The delayed validator is then punished.
   - Producing an invalid micro block. Given this case, the rest of the validator list can ignore the invalid micro block.
 
   <br/>
 
-In either case, the malicious validators are punished according to the [punishment](punishments.md) rules of the consensus algorithm.
+In either case, the malicious validators are punished according to the punishment rules of the consensus algorithm.
 
 <br/>
 
 - Macro blocks: Macro blocks have finality, meaning that they are forkless. Yet, the elected leader can fail with the macro block proposal. There are two ways to attempt to tamper with macro blocks:
-  - Failing to make a macro block proposal. If a validator doesn’t propose a macro block in the expected time, [TODO Tendermint](https://nimiq.com) has its procedure to select a new macro block leader.
+  - Failing to make a macro block proposal. If a validator doesn’t propose a macro block in the expected time, Tendermint has its procedure to select a new macro block leader.
   - Creating an invalid proposal. Tendermint ignores invalid proposals. Therefore, a new validator is elected as the macro block leader if the timeout to send a proposal passes. Note that, even if the macro block leader sends an invalid proposal, once a valid one is sent, the invalid proposal is ignored, and the valid one can be accepted.

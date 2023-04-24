@@ -1,10 +1,10 @@
-# Nimiq 2.0
+# Nimiq Proof-of-Stake
 
 [OASIS](/protocol/OASIS.md)
 
 <!-- [Supply formula](/protocol/supply-formula.md) -->
 
-[Glossary Nimiq 2.0](/protocol/glossary.md)
+[Glossary Nimiq PoS](/protocol/glossary.md)
 
 [Fork proofs](/protocol/fork-proofs.md)
 
@@ -40,13 +40,11 @@
 
 [Messages and requests](/protocol/messages-and-requests.md)
 
-<!-- [Albatross Alpha testnet](/protocol/Albatross-Alpha-testnet.md) -->
+[Validator setup guide](/protocol/becoming-a-validator.md)
 
-<!-- [Validator setup devnet](/protocol/Validator-setup-devnet.md) -->
+[Validator setup guide using JSON-CLI](/protocol/becoming-a-validator-cli.md)
 
-<!-- [State sync](/protocol/State-sync.md) -->
-
-<!-- [Gossip](/protocol/Gossip.md) -->
+[State Live Sync](/protocol/state-live-sync.md)
 
 [RPC client](/protocol/rpc-client.md)
 

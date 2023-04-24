@@ -4,7 +4,7 @@ Nimiq Proof-of-Stake is the novel consensus protocol from Nimiq, inspired by spe
 
 <br/>
 
-Nimiq 2.0 is a proof-of-stake blockchain that, instead of miners mining blocks, as in the Nimiq 1.0 blockchain, we have validators that produce and verify blocks. A recurring assumption of PBFT algorithms is taking into account the presence of malicious validators. In our algorithm, we assume that out of 3*f*+1 validators, at maximum _f_ are malicious. This assumption allows reaching a consensus among validators to ensure a valid and accurate performance of the blockchain, even if up to f validators fail to respond or act maliciously.
+Nimiq PoS is a proof-of-stake blockchain that, instead of miners mining blocks, as in the Nimiq 1.0 blockchain, we have validators that produce and verify blocks. A recurring assumption of PBFT algorithms is taking into account the presence of malicious validators. In our algorithm, we assume that out of 3*f*+1 validators, at maximum _f_ are malicious. This assumption allows reaching a consensus among validators to ensure a valid and accurate performance of the blockchain, even if up to f validators fail to respond or act maliciously.
 
 <br/>
 
@@ -14,9 +14,9 @@ Any node in Nimiq’s network can propose to be a validator by staking its coins
 
 <br/>
 
-### [TODO Block format](https://nimiq.com)
+### Block format
 
-Our blockchain is composed of micro and macro blocks. Micro blocks are produced by validators and contain transactions, and macro blocks are proposed by validators and mark the end of a batch or epoch. Also, each micro block is produced by a validator, and macro blocks are proposed by a validator through the [TODO Tendermint](https://nimiq.com) protocol, and these latter blocks offer finality.
+Our blockchain is composed of micro and macro blocks. Micro blocks are produced by validators and contain transactions, and macro blocks are proposed by validators and mark the end of a batch or epoch. Also, each micro block is produced by a validator, and macro blocks are proposed by a validator through the Tendermint protocol, and these latter blocks offer finality.
 
 <br/>
 
@@ -24,7 +24,7 @@ There are two types of macro blocks: checkpoint and election. The validator list
 
 <br/>
 
-### [TODO Behavior modes](https://nimiq.com)
+### Behavior modes
 
 We assume the presence of malicious validators, we consider two modes of behavior: optimistic mode and pessimistic mode.
 

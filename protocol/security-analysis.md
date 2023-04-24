@@ -21,7 +21,7 @@ In a decentralized network, data is secure and verified by many nodes that don't
 
 <br/>
 
-This document will cover the security analysis of the Nimiq 2.0 blockchain, presenting the type of actors that can participate in the consensus and its adversaries. We also describe how we handle a possible network partition and, by the end, the finality of blocks based on probabilities and transaction censorship.
+This document will cover the security analysis of the Nimiq PoS blockchain, presenting the type of actors that can participate in the consensus and its adversaries. We also describe how we handle a possible network partition and, by the end, the finality of blocks based on probabilities and transaction censorship.
 
 <br/>
 

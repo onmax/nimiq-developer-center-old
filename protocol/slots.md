@@ -1,6 +1,6 @@
 # Slots
 
-Validators produce and validate blocks in proof-of-stake blockchains. In Nimiq 2.0 consensus algortihm, each validator receives _x_ slots that will qualify it to participate in the consensus, thus validating blocks. Slots allow validators to produce, propose and sign blocks. The slots are a sort of ticket each validator receives when selected to be in the staking contract. The number of slots a validator gets differs on how much stake validators have staked.
+Validators produce and validate blocks in proof-of-stake blockchains. In the Albatross algortihm, each validator receives _x_ slots that will qualify it to participate in the consensus, thus validating blocks. Slots allow validators to produce, propose and sign blocks. The slots are a sort of ticket each validator receives when selected to be in the staking contract. The number of slots a validator gets differs on how much stake validators have staked.
 
 <br/>
 

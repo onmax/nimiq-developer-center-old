@@ -22,7 +22,7 @@ Retaking the Bitcoin example, if a set of nodes decided to decrease the block si
 
 ### Nimiq’s switch from proof-of-work to proof-of-stake
 
-The Nimiq 2.0 protocol is the result of a hard fork from a proof-of-work mechanism to a proof-of-stake model. The process was introduced with a soft fork in the Nimiq 1.0 blockchain and a hard fork with three phases in the 2.0 blockchain. For a detailed explanation of the hard fork, check our [blog post](https://www.nimiq.com/blog/nimiq-20-albatross-hard-fork-preparations/).
+The Nimiq PoS protocol is the result of a hard fork from a proof-of-work mechanism to a proof-of-stake model. The process was introduced with a soft fork in the Nimiq 1.0 blockchain and a hard fork with three phases in the PoS blockchain. For a detailed explanation of the hard fork, check our [blog post](https://www.nimiq.com/blog/nimiq-20-albatross-hard-fork-preparations/).
 
 <br/>
 

@@ -1,31 +1,32 @@
 # Accounts
 
-Nimiq 2.0 has four different account types, each with its unique features and purposes.
+## Table of contents
+
+1. [Basic](accounts.md#_1-basic)
+2. [HTLC](accounts.md#_2-htlc)
+3. [Vesting Contract](accounts.md#_3-vesting-contract)
+4. [Staking Contract](accounts.md#_4-staking-contract)
+
+<br/>
+
+Nimiq PoS has four different account types, each with unique features and purposes. Each account has an individual address assigned, enabling users to interact with the blockchain.
 
 - Basic
 - HTLC (Hashed Timelock Contract)
-- Vesting contract
-- Staking contract
+- Vesting Contract
+- Staking Contract
 
-<br/>
-
-Users can operate with their accounts and interact with the blockchain through [TODO transactions](https://nimiq.com). Each account has a unique address.
-
-<br/>
-
-### **Basic account**
+## 1. Basic
 
 With a basic account, users can send and receive NIM and have a balance. The account is controlled with a private key unique to the user. This type of account is similar to a bank account with an address, a balance, and a key. Once a user sends or receives NIM, the balance is updated. A basic account is created once any user sends NIM to an inexistent address.
 
 <br/>
 
-### **HTLC**
+## 2. HTLC
 
 A HTLC is a conditional payment implemented by a script in the blockchain. It's a smart contract that enables a party to transfer assets to another party without relying on a third one. The contract acts as the escrow party for both sender and recipient.
 
 <br/>
-
-HTLC structure:
 
 | Data field       | Description                                                                                                                                                                                     |
 | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -52,13 +53,11 @@ There are three different transactions to unlock the funds, and each one results
 
 <br/>
 
-### **Vesting contract**
+## 3. Vesting contract
 
 The vesting contract allows a user to lock funds for a period of time and unlock them in a predefined timetable. This contract locks the funds of a single user (the contract owner), and it can unlock the funds in predefined portions.
 
 <br/>
-
-Vesting contract structure:
 
 | Data field     | Description                                                                                                                                          |
 | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -79,6 +78,6 @@ The contract owner can interact with the contract whenever he desires but can on
 
 <br/>
 
-### **Staking contract**
+## 4. Staking contract
 
-The staking contract is a Nimiq 2.0 type of contract that allows nodes to be validators and stakers, thus being a part of the consensus. Any node with a wallet and stake in Nimiq's blockchain can propose to be a validator or a staker. For a detailed explanation about the staking contract, follow this [link](staking-contract.md) to read on validators, stakers, and their interactions with the staking contract.
+The staking contract is a unique type of contract that deals uniquely with functions regarding validators, stakers, and staking activities. It enables nodes to participate in the consensus, ensuring the blockchain's security and accuracy. For a detailed explanation about the staking contract, follow this [link](staking-contract.md).

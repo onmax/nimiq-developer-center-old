@@ -46,7 +46,7 @@ Both the coinbase and transaction fees are variable. Whereas, in Bitcoin, for in
 
 To calculate the coinbase, we have a formula that predicts the supply at any given time, given three parameters:
 
-- Initial supply: the supply that Nimiq 2.0 will start with, denoted by *S₀*
+- Initial supply: the supply that Nimiq PoS will start with, denoted by *S₀*
 - Initial velocity: a constant parameter that determines the number of NIM created initially by unit of time represented by *V₀*
 - Decay: a constant that dictates the percentage of the velocity decrease, denoted by β
 
@@ -62,4 +62,4 @@ Additionally, 𝑡 is the time elapsed since the genesis block, and *e* is the
 
 <br/>
 
-Essentially, the coinbase is calculated by subtracting the supply calculated in the blockchain at any given time from the previous supply, which is the total amount of NIM at the end of the last batch. This is calculated at the exact moment the reward is distributed. For a detailed explanation of the supply formula to calculate the coinbase, [TODO supply formula click here](https://nimiq.com).
+Essentially, the coinbase is calculated by subtracting the supply calculated in the blockchain at any given time from the previous supply, which is the total amount of NIM at the end of the last batch. This is calculated at the exact moment the reward is distributed. For a detailed explanation of the supply formula to calculate the coinbase, supply formula click here.

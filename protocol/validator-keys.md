@@ -1,63 +1,51 @@
 # Validator keys
 
-A key pair consists of a public key and a private key, mathematically linked to each other. A private key authenticates a signer's address, and the public key allows a user to verify the signer's authenticity. Each address in Nimiq’s blockchain has an associated key. In the protocol, different keys are used to sign different types of transactions.
+Validators hold a set of keys in order to participate in the consensus. Besides a validator address, which serves as the validator’s identifier, validators hold three key pairs: a cold, a warm, and a hot key pair. These keys enable validators to sign several transactions.
 
 <br/>
 
-As with all blockchain users, validators need keys to interact with the network. Once a user proposes to validate blocks and stake their coins, three sets of keys are generated:
-
-- The corresponding key to the validator's address.
-- A signing key - Schnorr signature scheme.
-- A voting key - BLS signature scheme.
+A key pair consists of public and private keys, mathematically linked. The private key is used for authentication by the validator, while the corresponding public key is used to validate the authenticity of the validator. Validators use their private key to sign transactions. Then anyone can verify the validity of such transaction by using the validator’s corresponding public key.
 
 <br/>
 
-### BLS (Boneh–Lynn–Shacham)
-
-The BLS signature scheme uses a key pair to sign and verify messages. This signature scheme generates short signatures. We use the [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) signature scheme for signature aggregation, combining _n_ signatures into a single one. To aggregate multiple signatures on the same message, validators calculate their public keys combined and the message. Then, all signatures are aggregated into a single one by summing all up. Therefore, we obtain a single signature and a single public key, saving substantial space.
+For a node to become a validator, it must generate an address and the key set. Validators also own a fee key unrelated to this set, which has the sole purpose of paying transaction fees. To learn how to generate these keys, click here.
 
 <br/>
 
-### Schnorr keys
-
-Albatross uses the [ed25519](https://ed25519.cr.yp.to/) algorithm to generate [Schnorr](https://en.wikipedia.org/wiki/Schnorr_signature) key pairs to sign and verify messages. This signature scheme allows short and simple signatures, which are also easy to verify. They have a simple setup, allowing a fast way to validate transactions. Thus, when a validator signs a transaction, the rest of the validator list can easily verify the transaction. The validator signs the transaction, given its signing private key and the message. Then, the transaction can be verified with the validator’s signature, message, and public key.
+We use the [Schnorr](https://en.wikipedia.org/wiki/Schnorr_signature) signature scheme for generating the cold and warm key pairs, providing simplicity and short signatures. We use the [BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) signature scheme for the hot key for signature aggregation and voting efficiency.
 
 <br/>
 
-### Validator keys
+### Cold key
 
-**Address**
-
-Validators use their address corresponding key to:
-
-- Sign transactions.
-- Create, update and drop the validator in the [staking contract](staking-contract.md).
+- The validator’s address is derived from the cold public key
+- The cold private key is used for the validator to sign create, update, retire, and delete transactions
 
 <br/>
 
-**Signing key**
+### Warm key
 
-Validators use this key pair to:
-
-- Sign micro blocks.
-- Sign fork proofs.
-- Sign the macro block proposal from its proposer.
-- Generate the [VRF](verifiable-random-functions.md) seed for the random seed present in every block.
-- Retire, reactivate and unpark the validator in the staking contract.
+- The warm public key is stored in the validator as the `signing_key`
+- The warm private key is used for the validator to sign unpark, reactivate, and deactivate transactions
+- The warm private key is also used for the validator to sign micro blocks, macro block proposals and generate random seeds
 
 <br/>
 
-**Voting key**
+### Hot key
 
-Validators use this key pair to:
-
-- Vote for a skip block.
-- Vote for macro block proposals following the Tendermint protocol.
+- The hot public key is stored in the validator as the `voting_key`
+- The hot private key is used for the validator to vote for macro block proposals and skip blocks
 
 <br/>
 
-Although both signature schemes generate short signatures, Albatross only uses the BLS signature scheme to aggregate signatures. As voting for [TODO](https://nimiq.com)'s proposals and skip blocks requires multiple validators to sign, we opted for the BLS signature scheme to aggregate all validator’s signatures into one. This aggregation decreases the amount of space in storage that multiple signatures consist of.
+---
+
+Having 3 key pairs for validators adds layers of security and reduces the chance of compromising each key. Validators use their keys to sign blocks, vote for block proposals, and send staking contract transactions.
 
 <br/>
 
-The reason for the three sets of keys is due to operational security. The key corresponding to the validator’s address is immutable, while the signing and voting keys are mutable, and validators can change them by sending an update message.
+The terminology of hot, warm, and cold keys outlines the frequency of key usage. The hot key is used more often and readily accessible for regular use. While still used regularly, the warm key is less frequently accessed. On the other hand, the cold key is meant to be kept offline and used less often, making it less susceptible to potential attacks.
+
+<br/>
+
+The update transaction allows the validator to update its keys in case they are compromised. The cold key is immutable, and, by extension, so is the validator’s address.
