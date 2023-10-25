@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: "/nimiq-developer-center/",
+  base: "/nimiq-developer-center-old/",
   title: "Nimiq Developer Center",
   description: "A VitePress Site",
   themeConfig: {
